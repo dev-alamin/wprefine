@@ -1,0 +1,3430 @@
+.wprefine-page {
+    --blue: #2563EB;
+    --blue-mid: #1D4ED8;
+    --indigo: #4F46E5;
+    --cyan: #06B6D4;
+    --emerald: #10B981;
+    --amber: #F59E0B;
+    --dark: #060B18;
+    --dark-2: #0D1424;
+    --dark-3: #111827;
+    --slate-700: #334155;
+    --slate-500: #64748B;
+    --slate-400: #94A3B8;
+    --slate-200: #E2E8F0;
+    --slate-100: #F1F5F9;
+    --white: #ffffff;
+
+    --grad-hero: linear-gradient(135deg, #060B18 0%, #0D1A3A 50%, #071024 100%);
+    --grad-btn: linear-gradient(135deg, #2563EB, #4F46E5);
+    --grad-card: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    --grad-glow: radial-gradient(ellipse 70% 50% at 60% 40%, rgba(37, 99, 235, 0.18) 0%, transparent 70%);
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 0 1px rgba(37, 99, 235, 0.3), 0 8px 40px rgba(37, 99, 235, 0.2);
+
+    /* Motion & button tokens */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --btn-primary-bg: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    --btn-primary-glow: rgba(37, 99, 235, 0.4);
+    --btn-radius: 9999px;
+
+    font-family: 'DM Sans', sans-serif;
+    color: var(--slate-700);
+    background: #ffffff;
+}
+
+.wprefine-page *,
+.wprefine-page *::before,
+.wprefine-page *::after {
+    box-sizing: border-box;
+}
+
+/* ─── TYPOGRAPHY SYSTEM ────────────────────────────────── */
+.wprefine-page .t-display {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.wprefine-page .t-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.wprefine-page .t-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ─── SHARED LAYOUT ─────────────────────────────────────── */
+.wprefine-page .inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.wprefine-page .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    color: var(--blue);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.2rem;
+}
+
+.wprefine-page .section-badge.light {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── NAV ───────────────────────────────────────────────── */
+.wprefine-page .wpr-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-bar.home.wprefine-page .wpr-nav {
+    top: 35px;
+}
+
+.wprefine-page .wpr-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wprefine-page .wpr-logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--grad-btn);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+.wprefine-page .wpr-nav-links ul{
+    margin-bottom: 0;
+}
+.wprefine-page .wpr-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.wprefine-page .wpr-nav-links a {
+    color: var(--slate-200) !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.wprefine-page .wpr-nav-links a:hover {
+    color: white;
+}
+
+/* ─── HERO ──────────────────────────────────────────────── */
+.wprefine-page .hero {
+    background: var(--grad-hero);
+    padding: 180px 5% 220px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.wprefine-page .hero::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+    animation: wpr-orb-drift 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.wprefine-page .hero::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.18) 0%, transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    animation: wpr-orb-drift 15s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+}
+
+@keyframes wpr-orb-drift {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(40px, 30px) scale(1.08);
+    }
+}
+
+.wprefine-page .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.wprefine-page .hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.wprefine-page .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.35);
+    color: #93C5FD;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.wprefine-page .hero-eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--cyan);
+    animation: wpr-pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes wpr-pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.7);
+    }
+}
+
+.wprefine-page .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 7vw, 4.8rem);
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+.wprefine-page .hero h1 .grad-text {
+    background: linear-gradient(90deg, #60A5FA, #818CF8, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.wprefine-page .hero p {
+    color: rgba(148, 163, 184, 0.9);
+    max-width: 640px;
+    margin: 0 auto 2.8rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.wprefine-page .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wprefine-page .hero-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.wprefine-page .proof-stat {
+    text-align: center;
+}
+
+.wprefine-page .proof-stat strong {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+}
+
+.wprefine-page .proof-stat span {
+    font-size: 0.82rem;
+    color: var(--slate-400);
+}
+
+.wprefine-page .proof-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── FLOATING FEATURE CARDS ─────────────────────────────── */
+.wprefine-page .feat-strip {
+    padding: 0 5% 0;
+    margin-top: -90px;
+    position: relative;
+    z-index: 20;
+}
+
+.wprefine-page .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+@media(max-width:900px) {
+    .wprefine-page .feat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wprefine-page .feat-card {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease;
+}
+
+.wprefine-page .feat-card:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.wprefine-page .feat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.wprefine-page .feat-icon.blue {
+    background: #EFF6FF;
+}
+
+.wprefine-page .feat-icon.indigo {
+    background: #EEF2FF;
+}
+
+.wprefine-page .feat-icon.emerald {
+    background: #ECFDF5;
+}
+
+.wprefine-page .feat-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.6rem;
+}
+
+.wprefine-page .feat-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--slate-500);
+}
+
+/* ─── TRUSTED BY ─────────────────────────────────────────── */
+/* ==========================================================================
+   Sleek Tech-Badge Logo Bar (Light BG)
+   ========================================================================== */
+
+.wprefine-page .trusted {
+    padding: 70px 5%;
+    text-align: center;
+    background: var(--slate-100); /* Subtle off-white section background */
+    margin-top: 50px;
+}
+
+/* Header Text */
+.wprefine-page .trusted .wpr-reveal-text {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: #64748b !important;
+    margin-bottom: 2.25rem !important;
+}
+
+/* Grid Layout */
+.wprefine-page .trusted-logos {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.25rem !important;
+    flex-wrap: wrap !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Individual Brand Pill Cards */
+.wprefine-page .trusted-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 1.75rem 6.4rem !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 50px !important;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: default !important;
+}
+
+/* Bullet icon before text logo to simulate brandmark */
+.wprefine-page .trusted-logo::before {
+    content: "⚡"; /* Or a small SVG dot/icon */
+    font-size: 0.85rem;
+    filter: opacity(0.7);
+}
+
+/* Hover Effect */
+.wprefine-page .trusted-logo:hover {
+    border-color: #2563eb !important;
+    color: #0f172a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1) !important;
+}
+@media (max-width:768px) {
+    .wprefine-page .trusted-logo {
+        padding: 0.6rem 1.4rem !important;
+    }
+}
+
+/* ─── WHY SECTION ─────────────────────────────────────────── */
+.wprefine-page .why-section {
+    padding: 120px 5%;
+    background: white;
+    padding-top: 50px;
+}
+
+.wprefine-page .why-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media(max-width:860px) {
+    .wprefine-page .why-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.wprefine-page .why-visual {
+    position: relative;
+    height: 460px;
+}
+
+.wprefine-page .why-bg-card {
+    position: absolute;
+    background: var(--dark);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.wprefine-page .terminal-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.wprefine-page .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.wprefine-page .td-red {
+    background: #FF5F57;
+}
+
+.wprefine-page .td-yellow {
+    background: #FFBD2E;
+}
+
+.wprefine-page .td-green {
+    background: #28CA41;
+}
+
+.wprefine-page .terminal-body {
+    flex: 1;
+}
+
+.wprefine-page .t-line {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 2;
+    color: #94A3B8;
+}
+
+.wprefine-page .t-line .t-prompt {
+    color: #4ADE80;
+}
+
+.wprefine-page .t-line .t-cmd {
+    color: #F8FAFC;
+}
+
+.wprefine-page .t-line .t-ok {
+    color: #34D399;
+    font-weight: bold;
+}
+
+.wprefine-page .t-line .t-warn {
+    color: #FBBF24;
+}
+
+.wprefine-page .t-line .t-val {
+    color: #60A5FA;
+}
+
+.wprefine-page .t-line .t-comment {
+    color: #475569;
+}
+
+.wprefine-page .metric-badge {
+    position: absolute;
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wprefine-page .metric-badge.top-right {
+    top: -20px;
+    right: -20px;
+}
+
+.wprefine-page .metric-badge.bot-left {
+    bottom: -20px;
+    left: -20px;
+}
+
+.wprefine-page .metric-badge-icon {
+    font-size: 1.5rem;
+}
+
+.wprefine-page .metric-badge strong {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.wprefine-page .metric-badge span {
+    font-size: 0.75rem;
+    color: var(--slate-500);
+}
+
+.wprefine-page .why-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--dark);
+    margin-bottom: 1.2rem;
+}
+
+.wprefine-page .why-content p {
+    color: var(--slate-500);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.wprefine-page .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.wprefine-page .why-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--slate-700);
+}
+
+.wprefine-page .why-check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: #EFF6FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+/* ─── HOW IT WORKS ────────────────────────────────────────── */
+.wprefine-page .process-section {
+    padding: 120px 5%;
+    background: var(--slate-100);
+}
+
+.wprefine-page .process-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.wprefine-page .process-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.03em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.wprefine-page .process-header p {
+    color: var(--slate-500);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.wprefine-page .process-steps {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+@media(max-width:900px) {
+    .wprefine-page .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:540px) {
+    .wprefine-page .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wprefine-page .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(12.5% + 0px);
+    right: calc(12.5% + 0px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--blue), var(--indigo));
+    opacity: 0.3;
+    z-index: 0;
+}
+
+@media(max-width:900px) {
+    .wprefine-page .process-steps::before {
+        display: none;
+    }
+}
+
+.wprefine-page .process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.wprefine-page .process-step h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.wprefine-page .process-step p {
+    font-size: 0.87rem;
+    color: var(--slate-500);
+    line-height: 1.65;
+}
+
+.wprefine-page .step-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--grad-btn);
+    color: var(--white) !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ─── SERVICES DEEP DIVE ─────────────────────────────────── */
+.wprefine-page .services-section {
+    padding: 120px 5%;
+    background: white;
+}
+
+.wprefine-page .services-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.wprefine-page .services-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.03em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.wprefine-page .services-header p {
+    color: var(--slate-500);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.wprefine-page .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+@media(max-width:900px) {
+    .wprefine-page .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wprefine-page .service-card {
+    border: 1.5px solid var(--slate-200);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wprefine-page .service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.wprefine-page .service-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+}
+
+.wprefine-page .service-card:hover::after {
+    opacity: 1;
+}
+
+.wprefine-page .service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+}
+
+.wprefine-page .service-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+}
+
+.wprefine-page .service-card p {
+    font-size: 0.9rem;
+    color: var(--slate-500);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.wprefine-page .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wprefine-page .service-tag {
+    background: var(--slate-100);
+    color: var(--slate-700);
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+/* ─── PRICING ─────────────────────────────────────────────── */
+.wprefine-page .pricing-section {
+    padding: 120px 5%;
+    background: var(--dark);
+}
+
+.wprefine-page .pricing-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.wprefine-page .pricing-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.03em;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.wprefine-page .pricing-header p {
+    color: var(--slate-400);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.wprefine-page .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+@media(max-width:860px) {
+    .wprefine-page .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+.wprefine-page .price-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.wprefine-page .price-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.wprefine-page .price-card.featured {
+    background: white;
+    border-color: transparent;
+    padding: 3.5rem 2rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+
+.wprefine-page .price-badge {
+    display: inline-block;
+    background: var(--grad-btn);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+}
+
+.wprefine-page .price-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--slate-400);
+    margin-bottom: 1.2rem;
+}
+
+.wprefine-page .price-card.featured h3 {
+    color: var(--slate-500);
+}
+
+.wprefine-page .price-amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: white;
+    margin-bottom: 0.4rem;
+}
+
+.wprefine-page .price-card.featured .price-amount {
+    color: var(--dark);
+}
+
+.wprefine-page .price-period {
+    font-size: 0.85rem;
+    color: var(--slate-500);
+    margin-bottom: 2rem;
+}
+
+.wprefine-page .price-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 1.5rem auto;
+}
+
+.wprefine-page .price-card.featured .price-divider {
+    border-color: var(--slate-200);
+}
+
+.wprefine-page .price-features {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.wprefine-page .price-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.wprefine-page .price-card.featured .price-features li {
+    color: var(--slate-700);
+}
+
+.wprefine-page .pf-icon {
+    flex-shrink: 0;
+    color: var(--emerald);
+    font-size: 1rem;
+}
+
+.wprefine-page .pf-icon.muted {
+    color: var(--slate-500);
+}
+
+/* ─── TESTIMONIALS ────────────────────────────────────────── */
+.wprefine-page .testimonials-section {
+    padding: 120px 5%;
+    background: var(--slate-100);
+}
+
+.wprefine-page .testimonials-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wprefine-page .testimonials-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.03em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.wprefine-page .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+@media(max-width:900px) {
+    .wprefine-page .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wprefine-page .testi-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--slate-200);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wprefine-page .testi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.wprefine-page .testi-stars {
+    color: var(--amber);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.wprefine-page .testi-quote {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--slate-700);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.wprefine-page .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wprefine-page .testi-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--grad-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.wprefine-page .testi-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.wprefine-page .testi-role {
+    font-size: 0.78rem;
+    color: var(--slate-500);
+}
+
+/* ─── FAQ ─────────────────────────────────────────────────── */
+.wprefine-page .faq-section {
+    padding: 120px 5%;
+    background: white;
+}
+
+.wprefine-page .faq-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wprefine-page .faq-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.03em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.wprefine-page .faq-header p {
+    color: var(--slate-500);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.wprefine-page .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wprefine-page .faq-item {
+    border: 1.5px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.wprefine-page .faq-item.open {
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.wprefine-page .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1.4rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.wprefine-page .faq-q:hover {
+    background: var(--slate-100);
+}
+
+.wprefine-page .faq-chevron {
+    flex-shrink: 0;
+    font-size: 1rem;
+    color: var(--slate-400);
+    transition: transform 0.3s;
+}
+
+.wprefine-page .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.wprefine-page .faq-a {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.wprefine-page .faq-item.open .faq-a {
+    max-height: 300px;
+    padding: 0 1.5rem 1.4rem;
+}
+
+.wprefine-page .faq-a p {
+    font-size: 0.92rem;
+    color: var(--slate-500);
+    line-height: 1.75;
+}
+
+/* ─── CTA SECTION ─────────────────────────────────────────── */
+.wprefine-page .cta-section {
+    padding: 120px 5%;
+    background: linear-gradient(135deg, #060B18 0%, #0D1A3A 60%, #071024 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wprefine-page .cta-section .inner {
+    position: relative;
+    z-index: 2;
+}
+
+.wprefine-page .cta-section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -0.04em;
+    color: white;
+    margin-bottom: 1.2rem;
+}
+
+.wprefine-page .cta-section p {
+    color: var(--slate-400);
+    font-size: 1.1rem;
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+.wprefine-page .cta-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wprefine-page .cta-note {
+    color: var(--slate-500);
+    font-size: 0.82rem;
+    margin-top: 1.2rem;
+}
+
+/* Note: the hero/nav sit on top of the site's own header/footer template parts,
+   so this stylesheet assumes .wprefine-page wraps the page content template. */
+
+/* ─── SCROLL REVEAL BASE STYLES ─────────────────────────── */
+
+/* 1. Initial State (Hidden & Shifted Down) */
+.wprefine-page .wpr-reveal,
+.wprefine-page .feat-card,
+.wprefine-page .service-card,
+.wprefine-page .testi-card,
+.wprefine-page .price-card {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+    will-change: opacity, transform;
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 2. Revealed State (Triggered by JS on Scroll) */
+.wprefine-page .wpr-reveal.is-visible,
+.wprefine-page .feat-card.is-visible,
+.wprefine-page .service-card.is-visible,
+.wprefine-page .testi-card.is-visible,
+.wprefine-page .price-card.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* 3. Stagger Delays for Card Grids (Creates a wave effect) */
+.wprefine-page .feat-grid > *:nth-child(1),
+.wprefine-page .services-grid > *:nth-child(1),
+.wprefine-page .testimonials-grid > *:nth-child(1),
+.wprefine-page .pricing-grid > *:nth-child(1),
+.wprefine-page .wpr-vtesti-grid > *:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.wprefine-page .feat-grid > *:nth-child(2),
+.wprefine-page .services-grid > *:nth-child(2),
+.wprefine-page .testimonials-grid > *:nth-child(2),
+.wprefine-page .pricing-grid > *:nth-child(2),
+.wprefine-page .wpr-vtesti-grid > *:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.wprefine-page .feat-grid > *:nth-child(3),
+.wprefine-page .services-grid > *:nth-child(3),
+.wprefine-page .testimonials-grid > *:nth-child(3),
+.wprefine-page .pricing-grid > *:nth-child(3),
+.wprefine-page .wpr-vtesti-grid > *:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.wprefine-page .services-grid > *:nth-child(4),
+.wprefine-page .wpr-vtesti-grid > *:nth-child(4) {
+    transition-delay: 0.35s;
+}
+
+.wprefine-page .services-grid > *:nth-child(5) {
+    transition-delay: 0.45s;
+}
+
+.wprefine-page .services-grid > *:nth-child(6) {
+    transition-delay: 0.55s;
+}
+
+.wprefine-page .wpr-compare-container > *:nth-child(1) { transition-delay: 0.05s; }
+.wprefine-page .wpr-compare-container > *:nth-child(2) { transition-delay: 0.15s; }
+.wprefine-page .wpr-compare-container > *:nth-child(3) { transition-delay: 0.25s; }
+.wprefine-page .wpr-compare-container > *:nth-child(4) { transition-delay: 0.35s; }
+
+/* 4. Text Reveal Variation (Subtle Scale + Fade) */
+.wprefine-page .wpr-reveal-text {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale(0.98);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wprefine-page .wpr-reveal-text.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+
+
+/* ─── ULTRA-MODERN WP BUTTON SYSTEM ───────────────────────── */
+
+/* Core Target for WordPress Block Button Link */
+.wprefine-page .wp-block-button__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    text-decoration: none !important;
+    border-radius: var(--btn-radius);
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 0.35em;
+
+    /* Hardware Acceleration Optimization */
+    will-change: transform, box-shadow;
+    transition:
+        transform 0.3s var(--ease-spring),
+        box-shadow 0.3s var(--ease-smooth),
+        background 0.3s var(--ease-smooth),
+        border-color 0.3s var(--ease-smooth),
+        color 0.3s var(--ease-smooth);
+}
+
+/* Size Variant (.btn-lg) */
+.wprefine-page .btn-lg .wp-block-button__link {
+    padding: 0.9em 2em;
+}
+
+/* Full-width Variant (.btn-block) */
+.wprefine-page .btn-block {
+    width: 100%;
+}
+.wprefine-page .btn-block .wp-block-button__link {
+    width: 100%;
+}
+
+/* Shared Micro-Shimmer Sweep Layer */
+.wprefine-page .wp-block-button__link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.28) 50%,
+            transparent 100%);
+    transform: skewX(-25deg);
+    transition: left 0.75s var(--ease-smooth);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.wprefine-page .wp-block-button__link:hover::before {
+    left: 150%;
+}
+
+/* Active / Click Physical Feedback */
+.wprefine-page .wp-block-button__link:active {
+    transform: scale(0.97) translate3d(0, 0, 0) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* ─── 2. PRIMARY BUTTON (.is-style-fill) ────────────────────── */
+.wprefine-page .is-style-fill .wp-block-button__link {
+    background: var(--btn-primary-bg);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 4px 14px var(--btn-primary-glow),
+        0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.wprefine-page .is-style-fill .wp-block-button__link:hover {
+    transform: translate3d(0, -4px, 0) scale(1.02);
+    letter-spacing: 0.02em;
+    box-shadow:
+        0 12px 28px var(--btn-primary-glow),
+        0 0 16px rgba(79, 70, 229, 0.35);
+}
+
+
+/* ─── 3. OUTLINE / GHOST BUTTON (.is-style-outline) ────────── */
+.wprefine-page .is-style-outline .wp-block-button__link {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.wprefine-page .is-style-outline .wp-block-button__link:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #ffffff !important;
+    transform: translate3d(0, -3px, 0);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+
+/* Arrow/icon spacing: works automatically if text ends with an arrow like "View Plans →" */
+
+
+
+/* ─── SCOPED VIDEO TESTIMONIAL GRID ───────────────────────── */
+
+.wpr-vtesti-section {
+  width: 100%;
+  padding: 120px 5%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+/* Horizontal Scroll / Flexible Grid */
+.wpr-vtesti-section .wpr-vtesti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wpr-vtesti-section .wpr-vtesti-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Individual Card Base */
+.wpr-vtesti-section .wpr-vtesti-card {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  min-height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  
+  /* Smooth Hover Props */
+  will-change: transform, box-shadow;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wpr-vtesti-section .wpr-vtesti-card:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Background Color Variants (Matching Image Reference) */
+.wpr-vtesti-section .wpr-vtesti-card.bg-blue   { background-color: #a8c4da; }
+.wpr-vtesti-section .wpr-vtesti-card.bg-purple { background-color: #c7d2fe; }
+.wpr-vtesti-section .wpr-vtesti-card.bg-yellow { background-color: #f7e185; }
+.wpr-vtesti-section .wpr-vtesti-card.bg-gray   { background-color: #abbcca; }
+.wpr-vtesti-section .wpr-vtesti-card.bg-tan    { background-color: #e5ad80; }
+
+/* Portrait Image */
+.wpr-vtesti-section .wpr-vtesti-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.wpr-vtesti-section .wpr-vtesti-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wpr-vtesti-section .wpr-vtesti-card:hover .wpr-vtesti-media img {
+  transform: scale(1.04);
+}
+
+/* Centered Glassmorphic Play Button */
+.wpr-vtesti-section .wpr-vtesti-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.3s ease;
+}
+
+.wpr-vtesti-section .wpr-vtesti-play svg {
+  margin-left: 2px;
+}
+
+.wpr-vtesti-section .wpr-vtesti-card:hover .wpr-vtesti-play {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Bottom Dark Gradient for Overlay Text */
+.wpr-vtesti-section .wpr-vtesti-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 1.25rem 1.25rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Brand Line */
+.wpr-vtesti-section .wpr-vtesti-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+/* Quote Text */
+.wpr-vtesti-section .wpr-vtesti-quote {
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  margin: 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Author Details */
+.wpr-vtesti-section .wpr-vtesti-author {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.2rem;
+}
+
+.wpr-vtesti-section .wpr-vtesti-author .name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.wpr-vtesti-section .wpr-vtesti-author .role {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ─── SECTION HEADER STYLES ────────────────────────────── */
+
+.wpr-vtesti-section .wpr-vtesti-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wpr-vtesti-section .wpr-vtesti-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #60a5fa; /* Modern soft blue accent */
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.wpr-vtesti-section .wpr-vtesti-header h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  /* color: #ffffff; */
+  margin: 0 0 1rem 0;
+}
+
+.wpr-vtesti-section .wpr-vtesti-desc {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+
+/* ─── SCOPED COMPARISON MATRIX (DARK THEME FIX) ──────────────── */
+/* ==========================================================================
+   WPRefine — Comparison Table
+   ========================================================================== */
+
+/* 1. Force dark background on the main container */
+.wpr-compare-section {
+  width: 100%;
+  padding: 120px 5%;
+  box-sizing: border-box;
+  background-color: #0b0c10; /* Pitch dark background */
+  color: #ffffff;
+}
+
+.wpr-compare-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 2. Column Labels */
+.wpr-compare-cols {
+  display: grid;
+  grid-template-columns: 340px repeat(5, 1fr);
+  gap: 1rem;
+  padding: 0 1.5rem 0.5rem 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wpr-compare-cols .col-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.wpr-compare-cols .col-label.provider-col {
+  text-align: left;
+}
+
+/* 3. Base Row (Clean transparent background with bottom border) */
+.wpr-compare-row {
+  display: grid;
+  grid-template-columns: 340px repeat(5, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+.wpr-compare-row:not(.featured):hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* 4. Featured WPRefine Row (Glowing Gradient Card) */
+.wpr-compare-row.featured {
+  background: linear-gradient(
+    135deg,
+    rgba(67, 56, 202, 0.35) 0%,
+    rgba(30, 27, 75, 0.6) 50%,
+    rgba(79, 70, 229, 0.25) 100%
+  );
+  border: 1px solid #6366f1;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.2),
+              inset 0 0 15px rgba(99, 102, 241, 0.15);
+  border-bottom: 1px solid #6366f1; /* Maintain border */
+}
+
+/* 5. Provider Icons & Info */
+.wpr-compare-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Modern Dark Blue Icon Box (Matching reference) */
+.wpr-compare-info .provider-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 12px;
+  background: #111827;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* WPRefine Brand Icon */
+.wpr-compare-row.featured .provider-icon.icon-primary {
+  background: #6366f1;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.5);
+}
+
+/* High Contrast Text Fix */
+.wpr-compare-info .provider-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin: 0 0 0.3rem 0;
+}
+
+.wpr-compare-info .provider-desc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #94a3b8 !important; /* Fixed readability */
+  margin: 0;
+}
+
+/* 6. Check / Cross Status Styling */
+.wpr-compare-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wpr-compare-status .check {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.wpr-compare-status .cross {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ef4444; /* Clean solid red cross */
+}
+
+/* ==========================================================================
+   Mobile
+   Below the breakpoint the 6-column grid can't survive — 340px alone
+   exceeds most phone viewports. Each row becomes a stacked card:
+   provider info on top, then a label/value list for the five feature
+   columns. The labels are re-created via nth-of-type + generated
+   content (mirroring .wpr-compare-cols' text) since the status cells
+   have no data-label attribute to read from — if you ever touch the
+   pattern's HTML, adding data-label="…" to each .wpr-compare-status
+   and switching these to content: attr(data-label) would be more
+   robust than the hardcoded strings below.
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .wpr-compare-section {
+    padding: 70px 6%;
+  }
+
+  .wpr-compare-header {
+    text-align: center;
+  }
+
+  .wpr-compare-header h2.wp-block-heading {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .wpr-compare-desc {
+    font-size: 0.92rem;
+  }
+
+  .wpr-compare-badge {
+    justify-content: center;
+  }
+
+  /* Header row of column labels doesn't map to a stacked layout — hide it,
+     its text is reproduced per-row instead. */
+  .wpr-compare-cols {
+    display: none;
+  }
+
+  .wpr-compare-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1.25rem 1.25rem 0.5rem;
+  }
+
+  .wpr-compare-info {
+    padding-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .wpr-compare-status {
+    justify-content: space-between;
+    padding: 0.7rem 0.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .wpr-compare-status::before {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-align: left;
+  }
+
+  .wpr-compare-row.featured .wpr-compare-status {
+    border-top-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* .wpr-compare-info is the first div child of the row; the five
+     .wpr-compare-status divs that follow are therefore div children
+     2 through 6 — matching them by nth-of-type lets each pick up the
+     right label without needing a class per column. */
+  .wpr-compare-status:nth-of-type(2)::before { content: "Dedicated WP Experts"; }
+  .wpr-compare-status:nth-of-type(3)::before { content: "Zero Overhead / Benefits"; }
+  .wpr-compare-status:nth-of-type(4)::before { content: "Staging & Code Review"; }
+  .wpr-compare-status:nth-of-type(5)::before { content: "SLA & Emergency Support"; }
+  .wpr-compare-status:nth-of-type(6)::before { content: "Flexible Scaling"; }
+}
+
+@media (max-width: 420px) {
+  .wpr-compare-section {
+    padding: 56px 5%;
+  }
+
+  .wpr-compare-info {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .wpr-compare-status::before {
+    font-size: 0.72rem;
+  }
+}
+/* ─── SCOPED CONTACT CARD SECTION ──────────────────────────── */
+
+.wpr-contact-card-section {
+  width: 100%;
+  padding: 120px 5%;
+  box-sizing: border-box;
+}
+
+/* Outer Card Wrapper */
+.wpr-contact-card-section .wpr-contact-card-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(135deg, #060B18 0%, #0D1A3A 60%, #071024 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3.5rem 3rem;
+  overflow: hidden;
+}
+
+/* Grid System */
+.wpr-contact-card-section .wpr-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .wpr-contact-card-section .wpr-contact-card-inner {
+    padding: 2rem 1.5rem;
+  }
+  .wpr-contact-card-section .wpr-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ── LEFT COLUMN STYLES ── */
+.wpr-contact-card-section .wpr-contact-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.wpr-contact-card-section .wpr-contact-title {
+  font-size: clamp(2.2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+}
+
+.wpr-contact-card-section .wpr-contact-title .italic-text {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.wpr-contact-card-section .wpr-contact-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.wpr-contact-card-section .wpr-contact-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: #d1d5db;
+}
+
+.wpr-contact-card-section .check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Profile Box */
+.wpr-contact-card-section .wpr-contact-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.wpr-contact-card-section .profile-avatar img {
+  width: 140px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #a5b4fc;
+}
+
+.wpr-contact-card-section .profile-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.2rem 0;
+}
+
+.wpr-contact-card-section .profile-role {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  margin: 0 0 1rem 0;
+}
+
+.wpr-contact-card-section .profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.wpr-contact-card-section .direct-link {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.wpr-contact-card-section .call-link {
+  font-size: 0.85rem;
+  color: #60A5FA;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ── RIGHT COLUMN FORM STYLES ── */
+/* ==========================================================================
+   Fluent Forms - WPRefine Custom Dark Theme (Grid Layout Fix)
+   ========================================================================== */
+/* ==========================================================================
+   WPRefine Contact Form — Fluent Forms theme
+   Consumes tokens declared on the ancestor .wprefine-page wrapper.
+   ========================================================================== */
+
+.wpr-contact-right {
+  --field-bg: var(--dark-3, #111827);
+  --field-bg-hover: #161f30;
+  --field-border: rgba(148, 163, 184, 0.18);   /* slate-400 @ 18% */
+  --field-border-strong: rgba(148, 163, 184, 0.35);
+  --text-muted: var(--slate-500, #64748b);
+  --text-dim: var(--slate-200, #e2e8f0);
+  --accent-soft: rgba(37, 99, 235, 0.16);       /* blue @ 16% */
+  --danger: #ef4444;
+}
+
+/* ---------------------------------------------------------------- card */
+
+.wpr-contact-right .fluentform_wrapper_3 form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important;
+  padding: 1.75rem !important;
+  background: var(--grad-card, linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01))) var(--dark-2, #0d1424) !important;
+  border: 1px solid var(--field-border) !important;
+  border-radius: var(--radius-lg, 24px) !important;
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08)) !important;
+}
+
+.wpr-contact-right .fluentform_wrapper_3 fieldset {
+  display: contents !important;
+}
+
+/* Fluent Forms' own 2-column groups (email/whatsapp, goal/hosting).
+   Let each cell share the row evenly and never let flexbox's default
+   min-width:auto force a child to blow out or collapse. */
+.wpr-contact-right .ff-t-container.ff-column-container {
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+.wpr-contact-right .ff-t-cell {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 640px) {
+  .wpr-contact-right .fluentform_wrapper_3 form {
+    padding: 1.25rem !important;
+    border-radius: var(--radius-md, 16px) !important;
+  }
+  .wpr-contact-right .ff-t-container.ff-column-container {
+    flex-direction: column !important;
+  }
+}
+
+.wpr-contact-right .ff-el-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.4rem !important;
+  margin-bottom: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+/* ---------------------------------------------------------------- labels */
+
+.wpr-contact-right .ff-el-input--label label {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: var(--text-dim) !important;
+  text-transform: uppercase !important;
+}
+
+.wpr-contact-right .ff-el-is-required.asterisk-right label::after {
+  content: " *" !important;
+  color: var(--danger) !important;
+}
+
+/* ------------------------------------------------------------- text inputs */
+
+.wpr-contact-right input[type="text"],
+.wpr-contact-right input[type="email"],
+.wpr-contact-right input[type="url"],
+.wpr-contact-right input[type="number"],
+.wpr-contact-right textarea {
+  width: 100% !important;
+  background: var(--field-bg) !important;
+  border: 1px solid var(--field-border) !important;
+  border-radius: var(--radius-sm, 8px) !important;
+  padding: 0.8rem 1rem !important;
+  color: var(--white, #fff) !important;
+  font-size: 0.9rem !important;
+  font-family: inherit !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: border-color 0.2s var(--ease-smooth, ease), background-color 0.2s var(--ease-smooth, ease),
+    box-shadow 0.2s var(--ease-smooth, ease) !important;
+}
+
+.wpr-contact-right input::placeholder,
+.wpr-contact-right textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.wpr-contact-right input:hover,
+.wpr-contact-right textarea:hover {
+  background: var(--field-bg-hover) !important;
+}
+
+.wpr-contact-right input:focus,
+.wpr-contact-right textarea:focus {
+  border-color: var(--blue, #2563eb) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+
+.wpr-contact-right textarea {
+  resize: vertical !important;
+  min-height: 96px !important;
+  line-height: 1.5 !important;
+}
+
+.wpr-contact-right input[aria-invalid="true"],
+.wpr-contact-right textarea[aria-invalid="true"] {
+  border-color: var(--danger) !important;
+}
+
+/* --------------------------------------------------------- multi-select */
+
+.wpr-contact-right .choices {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.wpr-contact-right .choices__inner {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  background: var(--field-bg) !important;
+  border: 1px solid var(--field-border) !important;
+  border-radius: var(--radius-sm, 8px) !important;
+  padding: 0.45rem 0.7rem !important;
+  min-height: 48px !important;
+  transition: border-color 0.2s var(--ease-smooth, ease), box-shadow 0.2s var(--ease-smooth, ease) !important;
+}
+
+.wpr-contact-right .choices.is-focused .choices__inner,
+.wpr-contact-right .choices.is-open .choices__inner {
+  border-color: var(--blue, #2563eb) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+
+.wpr-contact-right .choices__list--multiple {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.wpr-contact-right .choices__input {
+  background: transparent !important;
+  color: var(--white, #fff) !important;
+  font-size: 0.9rem !important;
+  min-width: 60px !important;
+  flex: 1 1 auto !important;
+}
+
+/* This is the fix for the tag rendering as a vertical stack of single
+   characters: the item was inheriting a shrink-to-fit width inside a
+   flex row with no min-width guard, so overflow-wrap broke every
+   character onto its own line. Force a bounded, single-line pill. */
+.wpr-contact-right .choices__list--multiple .choices__item {
+  display: inline-flex !important;
+  flex: 0 1 auto !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  width: auto !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: normal !important;
+  background: var(--accent-soft) !important;
+  border: 1px solid rgba(37, 99, 235, 0.35) !important;
+  color: var(--white, #fff) !important;
+  border-radius: 999px !important;
+  padding: 0.28rem 0.7rem !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+}
+
+.wpr-contact-right .choices__list--multiple .choices__item .choices__button {
+  flex: none !important;
+  opacity: 0.6 !important;
+  filter: invert(1) !important;
+}
+
+.wpr-contact-right .choices__list--dropdown {
+  background: var(--dark-3, #111827) !important;
+  border: 1px solid var(--field-border-strong) !important;
+  border-radius: var(--radius-sm, 8px) !important;
+  color: var(--white, #fff) !important;
+  overflow: hidden !important;
+  z-index: 10 !important;
+}
+
+.wpr-contact-right .choices__list--dropdown .choices__item--selectable {
+  color: var(--text-dim) !important;
+  padding: 0.6rem 1rem !important;
+  font-size: 0.87rem !important;
+  white-space: normal !important;
+}
+
+.wpr-contact-right .choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background: var(--accent-soft) !important;
+  color: var(--white, #fff) !important;
+}
+
+/* ------------------------------------------------------------ radio pills */
+
+.wpr-contact-right .ff-el-input--content .ff-el-form-check {
+  display: inline-block !important;
+  margin: 0 0.5rem 0.5rem 0 !important;
+}
+
+.wpr-contact-right .ff-el-form-check-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+}
+
+.wpr-contact-right .ff-el-form-check-input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.wpr-contact-right .ff-el-form-check-label span {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  color: var(--text-dim) !important;
+  background: var(--field-bg) !important;
+  border: 1px solid var(--field-border) !important;
+  padding: 0.55rem 1rem !important;
+  border-radius: 999px !important;
+  transition: all 0.2s var(--ease-smooth, ease) !important;
+}
+
+.wpr-contact-right .ff-el-form-check-label:hover span {
+  border-color: var(--field-border-strong) !important;
+  color: var(--white, #fff) !important;
+  background: var(--field-bg-hover) !important;
+}
+
+.wpr-contact-right .ff-el-form-check-input:focus-visible + span {
+  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+
+.wpr-contact-right .ff-el-form-check-input:checked + span {
+  border-color: transparent !important;
+  color: #ffffff !important;
+  background: var(--grad-btn, linear-gradient(135deg, #2563eb, #4f46e5)) !important;
+  box-shadow: 0 4px 14px var(--btn-primary-glow, rgba(37, 99, 235, 0.4)) !important;
+}
+
+/* -------------------------------------------------------------- submit */
+
+.wpr-contact-right .ff_submit_btn_wrapper {
+  margin-top: 0.25rem !important;
+}
+
+.wpr-contact-right .ff-btn-submit {
+  position: relative !important;
+  display: flex !important;
+  width: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--btn-primary-bg, linear-gradient(135deg, #2563eb, #4f46e5)) !important;
+  border: none !important;
+  border-radius: var(--btn-radius, 9999px) !important;
+  padding: 0.95rem 1.75rem !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.01em !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 20px var(--btn-primary-glow, rgba(37, 99, 235, 0.4)) !important;
+  transition: transform 0.2s var(--ease-spring, ease), box-shadow 0.2s var(--ease-smooth, ease) !important;
+}
+
+.wpr-contact-right .ff-btn-submit::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.18) 50%, transparent 60%) !important;
+  transform: translateX(-100%) !important;
+  transition: transform 0.5s var(--ease-smooth, ease) !important;
+}
+
+.wpr-contact-right .ff-btn-submit:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 28px var(--btn-primary-glow, rgba(37, 99, 235, 0.5)) !important;
+}
+
+.wpr-contact-right .ff-btn-submit:hover::after {
+  transform: translateX(100%) !important;
+}
+
+.wpr-contact-right .ff-btn-submit:active {
+  transform: translateY(0) !important;
+}
+
+/* -------------------------------------------------------------- errors */
+
+.wpr-contact-right #fluentform_3_errors,
+.wpr-contact-right .ff-errors-in-stack {
+  color: var(--danger) !important;
+  font-size: 0.82rem !important;
+  margin-top: 0.4rem !important;
+}
+/*
+* -------------------------------
+* Single post page styles.
+* ---------------------------------
+*/
+/* ==========================================================================
+   Single Post & Gutenberg Block Styling Refinements
+   ========================================================================== */
+
+/* 1. Global Container & Typography */
+.single-post .entry-content,
+.single-post .wp-block-post-content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  color: #2d3748;
+  font-size: 1.125rem;
+}
+
+/* Post Title */
+.single-post .wp-block-post-title {
+  max-width: 900px;
+  margin: 2rem auto 1.5rem auto;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: #1a202c;
+}
+
+/* Headings inside content */
+.single-post .entry-content h2,
+.single-post .entry-content h3 {
+  color: #1a202c;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.single-post .entry-content h2 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 0.5rem;
+}
+
+.single-post .entry-content h3 {
+  font-size: 1.35rem;
+}
+
+/* Paragraph spacing */
+.single-post .entry-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* 2. Lists Styling */
+.single-post .entry-content ul,
+.single-post .entry-content ol {
+  margin-bottom: 1.75rem;
+  padding-left: 1.5rem;
+}
+
+.single-post .entry-content li {
+  margin-bottom: 0.625rem;
+}
+
+.single-post .entry-content li strong {
+  color: #1a202c;
+}
+
+/* 3. Modern Table Styling */
+.single-post .wp-block-table {
+  margin: 2.5rem 0;
+  overflow-x: auto;
+}
+
+.single-post .wp-block-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.single-post .wp-block-table th,
+.single-post .wp-block-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.single-post .wp-block-table tr:last-child td {
+  border-bottom: none;
+}
+
+.single-post .wp-block-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.single-post .wp-block-table tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+/* 4. Blockquote Styling */
+.single-post .wp-block-quote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem;
+  background-color: #f8fafc;
+  border-left: 4px solid #2563eb; /* Primary accent color */
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #334155;
+}
+
+.single-post .wp-block-quote p {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.single-post .wp-block-quote cite {
+  display: block;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* 5. Responsive Tweaks */
+@media (max-width: 768px) {
+  .single-post .entry-content,
+  .single-post .wp-block-post-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+  }
+
+  .single-post .wp-block-table th,
+  .single-post .wp-block-table td {
+    padding: 0.75rem 0.875rem;
+  }
+}
+
+/* ==========================================================================
+   Universal Post & CPT Single Page Styling
+   ========================================================================== */
+
+/* 1. Global Container & Typography */
+:is(.single, .editor-styles-wrapper) .entry-content,
+:is(.single, .editor-styles-wrapper) .wp-block-post-content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  color: #2d3748;
+  font-size: 1.125rem;
+}
+.wp-block-post-featured-image{
+    max-width: 900px;
+}
+/* Post Title */
+:is(.single, .editor-styles-wrapper) .wp-block-post-title {
+  max-width: 900px;
+  margin: 0.5rem auto 1.5rem auto;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: #1a202c;
+}
+
+/* Headings */
+:is(.single, .editor-styles-wrapper) :where(h1, h2, h3, h4) {
+  color: #1a202c;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+:is(.single, .editor-styles-wrapper) h2 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 0.5rem;
+}
+
+:is(.single, .editor-styles-wrapper) h3 {
+  font-size: 1.35rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraph Spacing */
+:is(.single, .editor-styles-wrapper) p {
+  margin-bottom: 1.5rem;
+}
+
+/* 2. Lists Styling */
+:is(.single, .editor-styles-wrapper) ul,
+:is(.single, .editor-styles-wrapper) ol {
+  margin-bottom: 1.75rem;
+  padding-left: 1.5rem;
+}
+
+:is(.single, .editor-styles-wrapper) li {
+  margin-bottom: 0.625rem;
+}
+
+:is(.single, .editor-styles-wrapper) li strong {
+  color: #1a202c;
+}
+
+/* 3. Modern Table Styling */
+:is(.single, .editor-styles-wrapper) .wp-block-table {
+  margin: 2.5rem 0;
+  overflow-x: auto;
+}
+
+:is(.single, .editor-styles-wrapper) .wp-block-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+:is(.single, .editor-styles-wrapper) .wp-block-table th,
+:is(.single, .editor-styles-wrapper) .wp-block-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+:is(.single, .editor-styles-wrapper) .wp-block-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* 4. Blockquote Styling */
+:is(.single, .editor-styles-wrapper) .wp-block-quote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem;
+  background-color: #f8fafc;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #334155;
+}
+
+:is(.single, .editor-styles-wrapper) .wp-block-quote p {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+.wpr-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.wpr-logo h1 a{
+    color: var(--slate-200);
+    font-size: 2.5rem;
+}
+
+.wpr-contact-card-section textarea#project-details {
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   WPRefine About Us Page Styling
+   ========================================================================== */
+
+/* Main Wrapper Scope */
+#wp--skip-link--target.wpr-main {
+  font-family: 'DM Sans', sans-serif !important;
+  color: var(--slate-700) !important;
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Page Super-Title (About Us Tag) */
+
+
+/* Hero Lead Subtitle */
+#wp--skip-link--target p.has-medium-font-size {
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+  color: var(--slate-500) !important;
+  max-width: 820px !important;
+}
+
+/* Section Headings (H2) */
+#wp--skip-link--target h2.wp-block-heading {
+  font-size: clamp(1.6rem, 2.5vw, 1.2rem) !important;
+  font-weight: 700 !important;
+  color: var(--dark) !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Separator Lines */
+#wp--skip-link--target hr.wp-block-separator {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, var(--slate-200) 0%, transparent 100%) !important;
+  margin: 3rem 0 !important;
+}
+
+/* Paragraph Text */
+#wp--skip-link--target p.wp-block-paragraph {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  color: var(--slate-700) !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* Clean Blockquote / Philosophy Callout */
+#wp--skip-link--target blockquote.wp-block-quote {
+  background: var(--dark-2) !important;
+  border-left: 4px solid var(--blue) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 2rem !important;
+  margin: 2.5rem 0 !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+#wp--skip-link--target blockquote.wp-block-quote p {
+  color: var(--white) !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+#wp--skip-link--target blockquote.wp-block-quote cite {
+  color: var(--cyan) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+}
+
+/* Grid Columns Styling (Philosophy Cards) */
+#wp--skip-link--target .wp-block-columns {
+  gap: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+#wp--skip-link--target .wp-block-columns .wp-block-column {
+  background: var(--slate-100) !important;
+  border: 1px solid var(--slate-200) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.75rem !important;
+  transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth) !important;
+}
+
+#wp--skip-link--target .wp-block-columns .wp-block-column:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: var(--shadow-card) !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
+}
+
+#wp--skip-link--target .wp-block-column h3.wp-block-heading {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: var(--blue-mid) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Meet the Founder Section */
+#wp--skip-link--target .are-vertically-aligned-center {
+  background: var(--dark) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 2.5rem !important;
+  align-items: center !important;
+}
+
+#wp--skip-link--target .are-vertically-aligned-center .wp-block-column {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+#wp--skip-link--target .are-vertically-aligned-center .wp-block-column:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+#wp--skip-link--target .are-vertically-aligned-center h3 {
+  color: var(--white) !important;
+  font-size: 1.8rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+#wp--skip-link--target .are-vertically-aligned-center p.has-small-font-size {
+  color: var(--cyan) !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+#wp--skip-link--target .are-vertically-aligned-center p.wp-block-paragraph {
+  color: var(--slate-400) !important;
+}
+
+#wp--skip-link--target .wp-block-image img {
+  border-radius: var(--radius-md) !important;
+  object-fit: cover !important;
+  box-shadow: var(--shadow-glow) !important;
+}
+
+/* Tech Stack Table */
+#wp--skip-link--target figure.wp-block-table {
+  border-radius: var(--radius-md) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--slate-200) !important;
+  box-shadow: var(--shadow-card) !important;
+  margin: 2rem 0 !important;
+}
+
+#wp--skip-link--target table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+#wp--skip-link--target th {
+  background: var(--dark) !important;
+  color: var(--white) !important;
+  text-align: left !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 0.95rem !important;
+}
+
+#wp--skip-link--target td {
+  padding: 1rem 1.25rem !important;
+  border-bottom: 1px solid var(--slate-200) !important;
+  font-size: 0.95rem !important;
+}
+
+#wp--skip-link--target tr:nth-child(even) td {
+  background-color: var(--slate-100) !important;
+}
+
+/* CTA Card Container */
+#wp--skip-link--target .has-contrast-background-color {
+  background: var(--grad-hero) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-glow) !important;
+  margin-top: 3rem !important;
+}
+
+#wp--skip-link--target .has-contrast-background-color h2 {
+  color: var(--white) !important;
+}
+
+#wp--skip-link--target .has-contrast-background-color p {
+  color: var(--slate-400) !important;
+}
+
+/* CTA Button Styling */
+#wp--skip-link--target .wp-block-button__link {
+  background: var(--grad-btn) !important;
+  color: var(--white) !important;
+  font-weight: 600 !important;
+  padding: 0.9rem 2rem !important;
+  border-radius: var(--btn-radius) !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px var(--btn-primary-glow) !important;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-smooth) !important;
+  display: inline-block !important;
+}
+
+#wp--skip-link--target .wp-block-button__link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.6) !important;
+}
+
+/* ==========================================================================
+   WPRefine Services Hub Page Styles
+   ========================================================================== */
+
+.wpr-services-hub {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* Hero Section */
+.wpr-hub-hero {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 4rem auto;
+}
+
+.wpr-badge {
+  display: inline-block;
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+.wpr-hub-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  font-weight: 800 !important;
+  color: var(--dark, #0f172a) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.wpr-hero-lead {
+  font-size: 1.2rem !important;
+  color: #64748b !important;
+  line-height: 1.6 !important;
+}
+
+/* Category Sections */
+.wpr-service-category {
+  margin-bottom: 4rem;
+}
+
+.wpr-category-header {
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wpr-category-header h2 {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--dark, #0f172a) !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.wpr-category-header p {
+  color: #64748b !important;
+  font-size: 1rem !important;
+  margin: 0 !important;
+}
+
+/* Cards Grid */
+.wpr-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.wpr-services-grid.wpr-grid-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 992px) {
+  .wpr-services-grid, 
+  .wpr-services-grid.wpr-grid-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .wpr-services-grid, 
+  .wpr-services-grid.wpr-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Styling */
+.wpr-service-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.wpr-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border-color: #06b6d4;
+}
+
+.wpr-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.wpr-service-card h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.35 !important;
+}
+
+.wpr-service-card h3 a {
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.wpr-service-card h3 a:hover {
+  color: #06b6d4;
+}
+
+.wpr-service-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.wpr-card-features {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 1.5rem 0 !important;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 1rem !important;
+}
+
+.wpr-card-features li {
+  font-size: 0.88rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.wpr-card-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.wpr-card-link {
+  color: #06b6d4;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.wpr-card-link:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+/* Emergency Banner */
+.wpr-emergency-banner {
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.wpr-emergency-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.wpr-alert-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  animation: wprRedPulse 1.6s infinite;
+}
+
+@keyframes wprRedPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.wpr-emergency-banner h3 {
+  color: #ffffff !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.wpr-emergency-banner p {
+  color: #94a3b8 !important;
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+}
+
+.wpr-btn-emergency {
+  background: #ef4444;
+  color: #ffffff;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.wpr-btn-emergency:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .wpr-emergency-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   WPRefine Services Grid - Bound to Variable Tokens
+   ========================================================================== */
+
+/* Grid Wrapper */
+.wprefine-page .wpr-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 992px) {
+    .wprefine-page .wpr-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .wprefine-page .wpr-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Service Card */
+.wprefine-page .wpr-service-card {
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s var(--ease-spring), 
+                box-shadow 0.3s var(--ease-smooth), 
+                border-color 0.3s var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.wprefine-page .wpr-service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Card Icon */
+.wprefine-page .wpr-card-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: var(--slate-100);
+    border-radius: var(--radius-sm);
+    color: var(--blue);
+}
+
+/* Card Title */
+.wprefine-page .wpr-service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 0.75rem 0;
+}
+
+.wprefine-page .wpr-service-card h3 a {
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.2s var(--ease-smooth);
+}
+
+.wprefine-page .wpr-service-card h3 a:hover {
+    color: var(--blue);
+}
+
+/* Excerpt */
+.wprefine-page .wpr-service-card p {
+    font-size: 0.95rem;
+    color: var(--slate-500);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+/* Link / CTA */
+.wprefine-page .wpr-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.2s var(--ease-smooth);
+}
+
+.wprefine-page .wpr-card-link span {
+    transition: transform 0.2s var(--ease-spring);
+}
+
+.wprefine-page .wpr-service-card:hover .wpr-card-link {
+    color: var(--indigo);
+}
+
+.wprefine-page .wpr-service-card:hover .wpr-card-link span {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   WPRefine Content List Styling (Targeting Gutenberg Entry Content Only)
+   ========================================================================== */
+
+/* Scope strictly to post/page body content */
+.entry-content ul.wp-block-list,
+.entry-content > ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 1.5rem 0 2rem 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+/* Individual List Items */
+.entry-content ul.wp-block-list > li,
+.entry-content > ul > li {
+    position: relative;
+    padding: 1rem 1.25rem 1rem 3.25rem !important; /* Space for icon */
+    background: #ffffff;
+    border: 1px solid #e2e8f0; /* var(--slate-200) */
+    border-radius: 8px;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #334155; /* var(--slate-700) */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, 
+                box-shadow 0.2s ease, 
+                border-color 0.2s ease;
+}
+
+/* Hover State */
+.entry-content ul.wp-block-list > li:hover,
+.entry-content > ul > li:hover {
+    transform: translateX(4px);
+    border-color: #2563eb; /* var(--blue) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Checkmark Icon */
+.entry-content ul.wp-block-list > li::before,
+.entry-content > ul > li::before {
+    content: "";
+    position: absolute;
+    left: 1.1rem;
+    top: 1.2rem;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(37, 99, 235, 0.1);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563EB' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 11px;
+}
+
+/* Strong text inside list items */
+.entry-content ul.wp-block-list > li strong,
+.entry-content > ul > li strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* Inline code block inside list items */
+.entry-content ul.wp-block-list > li code,
+.entry-content > ul > li code {
+    background: #f1f5f9;
+    color: #4f46e5;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    border: 1px solid #cbd5e1;
+}
+
+/* ==========================================================================
+   WPRefine Modern Spacious Footer
+   ========================================================================== */
+
+/* Main Footer Container */
+footer.wp-block-group.has-dark-background-color {
+    background-color: var(--dark, #0f172a) !important;
+    color: var(--slate-400, #94a3b8) !important;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+}
+
+/* Footer Column Grid Spacing */
+footer .wp-block-columns {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr 1.25fr 1fr;
+    gap: 3rem !important;
+    align-items: start;
+}
+
+@media (max-width: 991px) {
+    footer .wp-block-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    footer .wp-block-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem !important;
+    }
+}
+
+/* Footer Headings */
+footer h4.wp-block-heading {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #ffffff !important;
+    margin-bottom: 1.25rem !important;
+}
+
+/* Link Lists (No Bullets & Modern Spacing) */
+footer ul.is-style-no-bullets {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+footer ul.is-style-no-bullets li a {
+    color: var(--slate-400, #94a3b8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+footer ul.is-style-no-bullets li a:hover {
+    color: var(--blue, #2563eb);
+    transform: translateX(3px);
+}
+
+/* CTA Button Styling inside Footer */
+footer .wp-block-button__link {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    padding: 0.6rem 1.25rem !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    background: transparent !important;
+}
+
+footer .wp-block-button__link:hover {
+    border-color: var(--blue, #2563eb) !important;
+    background: var(--blue, #2563eb) !important;
+    color: #ffffff !important;
+}
+
+/* Separator Line */
+footer hr.wp-block-separator {
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 3rem 0 1.5rem 0 !important;
+}
+
+/* Bottom Copyright Bar */
+footer .wp-block-group:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--slate-500, #64748b);
+}
+
+footer .wp-block-group:last-child a {
+    color: var(--slate-400, #94a3b8);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer .wp-block-group:last-child a:hover {
+    color: #ffffff;
+}
+
+footer .wp-block-button__link {
+    margin-top: 30px;
+}
+
+.wp-block-group.is-content-justification-space-between.is-layout-flex.wp-container-core-group-is-layout-5bc46f6e {
+    margin-top: 45px;
+}
+
+.wp-block-post-title {
+    font-size: 45px;
+    margin-top: 25px;
+}
+
+@media (max-width:667px) {
+    .wp-block-post-title {
+        font-size: 25px;
+    }
+}

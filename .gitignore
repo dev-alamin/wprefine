@@ -1,0 +1,81 @@
+# =========================================================================
+# WP Refine — .gitignore
+# Repo root = /var/www/hv/ (WordPress root)
+# Strategy: ignore everything by default, then explicitly un-ignore
+# only the custom code we author ourselves.
+# =========================================================================
+
+# ---- WordPress core ----
+/wp-admin/
+/wp-includes/
+/index.php
+/wp-*.php
+/xmlrpc.php
+/license.txt
+/readme.html
+/wp-config.php
+!wp-config-sample.php
+
+# ---- wp-content: ignore everything, then whitelist our stuff ----
+/wp-content/*
+!/wp-content/themes/
+!/wp-content/plugins/
+
+# Themes: ignore all themes except our child theme
+/wp-content/themes/*
+!/wp-content/themes/wprefine/
+
+# Plugins: ignore all plugins except our custom addon
+/wp-content/plugins/*
+!/wp-content/plugins/hayativape-custom-addon/
+
+# mu-plugins — not currently tracked per repo structure.
+# If fatalflow-config / fatalflow-logic / fix-rank-math-term-screen
+# should be tracked (they're custom-authored), add explicit
+# un-ignore lines here the same way as themes/plugins above:
+# !/wp-content/mu-plugins/
+# /wp-content/mu-plugins/*
+# !/wp-content/mu-plugins/fatalflow-config.php
+# !/wp-content/mu-plugins/fatalflow-logic.php
+# !/wp-content/mu-plugins/fix-rank-math-term-screen.php
+
+# ---- Never track these, even inside tracked folders ----
+/wp-content/uploads/
+/wp-content/uploads_old/
+/wp-content/cache/
+/wp-content/wpo-cache/
+/wp-content/litespeed/
+/wp-content/w3tc-config/
+/wp-content/updraft/
+/wp-content/ai1wm-backups/
+/wp-content/aiowps_backups/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/debug.log
+/wp-content/advanced-cache.php
+/wp-content/object-cache.php
+
+# Any nested build artifacts, node_modules, vendor dirs inside tracked code
+**/node_modules/
+**/vendor/
+**/*.log
+
+# ---- Editor / OS cruft ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ---- Env / secrets ----
+.env
+.env.*
+!.env.example
+.htaccess
+
+# ---- Backups / dumps that sometimes land in webroot ----
+*.sql
+*.sql.gz
+*.zip
+*.tar.gz
