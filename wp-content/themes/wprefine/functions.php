@@ -108,3 +108,63 @@ add_action( 'wp_head', 'wprefine_noscript_reveal_fallback' );
 
 // Add case study CPT
 require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Lightweight breadcrumb trail.
+ *
+ * Registered as the [wpr_breadcrumbs] shortcode so block templates
+ * (page.html, single.html, archive-service.html, etc.) can drop it in
+ * with a plain wp:shortcode block — no custom block/render-callback
+ * plumbing required. Skipped entirely on the front page.
+ */
+function wprefine_breadcrumbs_shortcode() {
+	if ( is_front_page() ) {
+		return '';
+	}
+
+	$trail = array(
+		array( 'url' => home_url( '/' ), 'label' => 'Home' ),
+	);
+
+	if ( is_singular( 'service' ) ) {
+		$trail[] = array( 'url' => get_post_type_archive_link( 'service' ), 'label' => 'Services' );
+		$trail[] = array( 'url' => '', 'label' => get_the_title() );
+	} elseif ( is_singular( 'case_study' ) ) {
+		$trail[] = array( 'url' => get_post_type_archive_link( 'case_study' ), 'label' => 'Case Studies' );
+		$trail[] = array( 'url' => '', 'label' => get_the_title() );
+	} elseif ( is_singular( 'post' ) ) {
+		$trail[] = array( 'url' => get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/blogs/' ), 'label' => 'Blog' );
+		$trail[] = array( 'url' => '', 'label' => get_the_title() );
+	} elseif ( is_page() ) {
+		$ancestors = array_reverse( get_post_ancestors( get_the_ID() ) );
+		foreach ( $ancestors as $ancestor_id ) {
+			$trail[] = array( 'url' => get_permalink( $ancestor_id ), 'label' => get_the_title( $ancestor_id ) );
+		}
+		$trail[] = array( 'url' => '', 'label' => get_the_title() );
+	} elseif ( is_post_type_archive( 'service' ) ) {
+		$trail[] = array( 'url' => '', 'label' => 'Services' );
+	} elseif ( is_post_type_archive( 'case_study' ) ) {
+		$trail[] = array( 'url' => '', 'label' => 'Case Studies' );
+	} elseif ( is_home() ) {
+		$trail[] = array( 'url' => '', 'label' => 'Blog' );
+	} elseif ( is_search() ) {
+		$trail[] = array( 'url' => '', 'label' => 'Search results for “' . get_search_query() . '”' );
+	} elseif ( is_404() ) {
+		$trail[] = array( 'url' => '', 'label' => 'Page not found' );
+	} else {
+		$trail[] = array( 'url' => '', 'label' => wp_get_document_title() );
+	}
+
+	$items = array();
+	$last  = count( $trail ) - 1;
+	foreach ( $trail as $i => $crumb ) {
+		if ( $i === $last || empty( $crumb['url'] ) ) {
+			$items[] = '<span class="wpr-crumb-current" aria-current="page">' . esc_html( $crumb['label'] ) . '</span>';
+		} else {
+			$items[] = '<a href="' . esc_url( $crumb['url'] ) . '">' . esc_html( $crumb['label'] ) . '</a><span class="wpr-crumb-sep">/</span>';
+		}
+	}
+
+	return '<nav class="wpr-breadcrumbs" aria-label="Breadcrumb"><div class="wpr-breadcrumbs-inner">' . implode( '', $items ) . '</div></nav>';
+}
+add_shortcode( 'wpr_breadcrumbs', 'wprefine_breadcrumbs_shortcode' );

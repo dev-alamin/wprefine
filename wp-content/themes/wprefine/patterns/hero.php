@@ -1,39 +1,13 @@
 <?php
 /**
- * Title: Hero with Navigation
+ * Title: Hero
  * Slug: wprefine/hero
  * Categories: wprefine
- * Description: Dark gradient hero section with an overlaid transparent nav bar, animated background orbs, headline, CTA buttons and a social-proof stat bar.
- * Keywords: hero, nav, header
+ * Description: Dark gradient hero section with animated background orbs, headline, CTA buttons and a social-proof stat bar. Nav lives in parts/header.html and is shared by every template.
+ * Keywords: hero
  * Block Types: core/template-part/header
  */
 ?>
-<!-- wp:group {"tagName":"nav","className":"wpr-nav","layout":{"type":"default"}} -->
-<nav class="wp-block-group wpr-nav">
-	<!-- wp:group {"className":"wpr-logo","layout":{"type":"default"}} -->
-	<div class="wp-block-group wpr-logo">
-		<!-- wp:paragraph {"className":"wpr-logo-mark"} -->
-		<p class="wpr-logo-mark">⚡</p>
-		<!-- /wp:paragraph -->
-
-		<!-- wp:paragraph -->
-		<p>WPRefine</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:navigation {"className":"wpr-nav-links","overlayMenu":"never"} /-->
-
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons">
-		<!-- wp:button {"className":"is-style-fill"} -->
-		<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button" href="/free-audit/">Get Audit →</a></div>
-		<!-- /wp:button -->
-	</div>
-	<!-- /wp:buttons -->
-</nav>
-<!-- /wp:group -->
-
 <!-- wp:group {"tagName":"section","className":"hero","layout":{"type":"constrained"}} -->
 <section class="wp-block-group hero">
 
